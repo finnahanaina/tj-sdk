@@ -21,10 +21,16 @@ kotlin {
         }
     }
     sourceSets {
-        val jvmMain by getting
+        val jvmMain by getting{
+            dependencies {
+                implementation(kotlin("test"))
+                implementation("com.squareup.okhttp3:okhttp:3.8.1")
+            }
+        }
         val jvmTest by getting {
             dependencies {
                 implementation(kotlin("test"))
+                implementation("com.squareup.okhttp3:okhttp:3.8.1")
             }
         }
     }
