@@ -1,4 +1,12 @@
 package tj.monitoring
+
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.RequestBody.Companion.toRequestBody
+import okhttp3.Response
+import com.google.gson.Gson
+
 data class SamData(
     val name: String,
     val status: String,
@@ -85,21 +93,90 @@ data class TransactionData(
 )
 
 class Main() {
+    private val client = OkHttpClient()
+    private val baseUrl = "https://tj-be.k3s.bangun-kreatif.com"
+
 
     fun checkRunning(name : String):String{
         return "Hei $name, It's Working!";
     }
 
-    fun booting(payload : BootingData):String{
-        return "Booting Called with payload : $payload"
+    fun booting(payload: BootingData): String {
+        val gson = Gson()
+        // Create a JSON request body from the payload
+        val json = gson.toJson(payload)
+        val mediaType = "application/json; charset=utf-8".toMediaType()
+        val requestBody = json.toRequestBody(mediaType)
+
+        // Create an HTTP POST request
+        val request = Request.Builder()
+            .url("$baseUrl/log/booting") // Replace with your actual API endpoint
+            .post(requestBody)
+            .build()
+
+        // Execute the request and handle the response
+        try {
+            val response: Response = client.newCall(request).execute()
+            if (!response.isSuccessful) {
+                return "Error: ${response.code}"
+            }
+            val responseBody = response.body?.string() ?: ""
+            return "Booting Called with payload: $json\nResponse: $responseBody"
+        } catch (e: Exception) {
+            return "Error: ${e.message}"
+        }
     }
 
     fun heartbeat(payload : HeartbeatData):String{
-        return "Heartbeat Called with payload : $payload"
+        val gson = Gson()
+        // Create a JSON request body from the payload
+        val json = gson.toJson(payload)
+        val mediaType = "application/json; charset=utf-8".toMediaType()
+        val requestBody = json.toRequestBody(mediaType)
+
+        // Create an HTTP POST request
+        val request = Request.Builder()
+            .url("$baseUrl/log/heartbeat") // Replace with your actual API endpoint
+            .post(requestBody)
+            .build()
+
+        // Execute the request and handle the response
+        try {
+            val response: Response = client.newCall(request).execute()
+            if (!response.isSuccessful) {
+                return "Error: ${response.code}"
+            }
+            val responseBody = response.body?.string() ?: ""
+            return "Heartbeat Called with payload: $json\nResponse: $responseBody"
+        } catch (e: Exception) {
+            return "Error: ${e.message}"
+        }
     }
 
     fun transaction(payload : TransactionData):String{
-        return "Transaction Called with payload : $payload"
+        val gson = Gson()
+        // Create a JSON request body from the payload
+        val json = gson.toJson(payload)
+        val mediaType = "application/json; charset=utf-8".toMediaType()
+        val requestBody = json.toRequestBody(mediaType)
+
+        // Create an HTTP POST request
+        val request = Request.Builder()
+            .url("$baseUrl/log/transaction") // Replace with your actual API endpoint
+            .post(requestBody)
+            .build()
+
+        // Execute the request and handle the response
+        try {
+            val response: Response = client.newCall(request).execute()
+            if (!response.isSuccessful) {
+                return "Error: ${response.code}"
+            }
+            val responseBody = response.body?.string() ?: ""
+            return "Transaction Called with payload: $json\nResponse: $responseBody"
+        } catch (e: Exception) {
+            return "Error: ${e.message}"
+        }
     }
 
 }

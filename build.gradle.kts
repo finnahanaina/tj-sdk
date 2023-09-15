@@ -24,13 +24,13 @@ kotlin {
         val jvmMain by getting{
             dependencies {
                 implementation(kotlin("test"))
-                implementation("com.squareup.okhttp3:okhttp:3.8.1")
+                implementation("com.squareup.okhttp3:okhttp:4.7.2")
+                implementation("com.google.code.gson:gson:2.8.8")
             }
         }
         val jvmTest by getting {
             dependencies {
                 implementation(kotlin("test"))
-                implementation("com.squareup.okhttp3:okhttp:3.8.1")
             }
         }
     }
