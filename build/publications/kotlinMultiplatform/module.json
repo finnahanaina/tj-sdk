@@ -1,0 +1,76 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "tj.monitoring",
+    "module": "tjmonitoring",
+    "version": "0.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "metadataApiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.7.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "tjmonitoring-metadata-0.1.jar",
+          "url": "tjmonitoring-0.1.jar",
+          "size": 676,
+          "sha512": "4d2737aa011a1e5c757f8659c82b92f077fa7f381dd007dde7e9a6a5f3c27558be14be5bc8dd02a2492beb934785143556d3d66b8c965260ccd2b188e7b8aece",
+          "sha256": "ef9d3dc4ae4177952eaceb9ada5f823bd42684f8ecd684a02065bc231a0a95ce",
+          "sha1": "94b66f04519bebc1bb262db394f42462bc68cb1d",
+          "md5": "84f79d7f647d13d501446779c5fb6b20"
+        }
+      ]
+    },
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../tjmonitoring-jvm/0.1/tjmonitoring-jvm-0.1.module",
+        "group": "tj.monitoring",
+        "module": "tjmonitoring-jvm",
+        "version": "0.1"
+      }
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../tjmonitoring-jvm/0.1/tjmonitoring-jvm-0.1.module",
+        "group": "tj.monitoring",
+        "module": "tjmonitoring-jvm",
+        "version": "0.1"
+      }
+    }
+  ]
+}

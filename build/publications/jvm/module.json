@@ -1,0 +1,77 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../tjmonitoring/0.1/tjmonitoring-0.1.module",
+    "group": "tj.monitoring",
+    "module": "tjmonitoring",
+    "version": "0.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.7.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "tjmonitoring-jvm-0.1.jar",
+          "url": "tjmonitoring-jvm-0.1.jar",
+          "size": 1417,
+          "sha512": "d66f1d9351593c3e3cc12e7ce28c6f27846d87d601e8346d545ecc342817ae835ebd9fbddb1cb4bac16ed4afb9b35d2c2efa1fe7305c1cc589a23bd26f1b88ea",
+          "sha256": "c8ade644afe626ed75a1ae76e81ab2d0988f97b7c8a4a1427afbf134501d365c",
+          "sha1": "319987fe634ab3b83feff81a65b73821693e44f4",
+          "md5": "4a7c1984787d0626737d484c604c56fd"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.7.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "tjmonitoring-jvm-0.1.jar",
+          "url": "tjmonitoring-jvm-0.1.jar",
+          "size": 1417,
+          "sha512": "d66f1d9351593c3e3cc12e7ce28c6f27846d87d601e8346d545ecc342817ae835ebd9fbddb1cb4bac16ed4afb9b35d2c2efa1fe7305c1cc589a23bd26f1b88ea",
+          "sha256": "c8ade644afe626ed75a1ae76e81ab2d0988f97b7c8a4a1427afbf134501d365c",
+          "sha1": "319987fe634ab3b83feff81a65b73821693e44f4",
+          "md5": "4a7c1984787d0626737d484c604c56fd"
+        }
+      ]
+    }
+  ]
+}
