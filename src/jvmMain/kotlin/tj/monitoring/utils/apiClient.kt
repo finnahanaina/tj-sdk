@@ -30,7 +30,7 @@ class apiClient {
         }
         return response(code, msg)
     }
-    fun post(payload: Any, URL: String, condition: Int, timeSleep: Long = 2000) : String {
+    fun post(payload: Any, URL: String, condition: Int = 3, timeSleep: Long = 60000) : String {
         val json = gson.toJson(payload)
         val mediaType = "application/json; charset=utf-8".toMediaType()
         val requestBody = json.toRequestBody(mediaType)
