@@ -100,15 +100,15 @@ class Main() {
         return "Hei $name, It's Working!";
     }
 
-    fun booting(payload: BootingData): response {
+    fun booting(payload: BootingData): String {
         return apiClient().post(payload, "/log/booting");
     }
 
-    fun heartbeat(payload: HeartbeatData): response {
+    fun heartbeat(payload: HeartbeatData): String {
         return apiClient().post(payload, "/log/heartbeat");
     }
 
-    fun transaction(payload: TransactionData): response {
+    fun transaction(payload: TransactionData): String {
         return apiClient().post(payload, "/log/transaction");
     }
 }

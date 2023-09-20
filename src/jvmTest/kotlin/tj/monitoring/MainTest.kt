@@ -1,7 +1,11 @@
 package tj.monitoring
 
+import tj.monitoring.utils.response
 import kotlin.test.Test
 import kotlin.test.assertContains
+import kotlin.test.assertContentEquals
+import kotlin.test.assertIs
+
 data class SamData(
     val name: String,
     val status: String,
@@ -132,7 +136,7 @@ class MainTest {
             )
         )
         val check = Main()
-        println(check.booting(bootingData).toString())
+        assertContains(check.booting(bootingData),"200")
     }
 
     @Test
@@ -163,7 +167,7 @@ class MainTest {
             )
         )
         val check = Main()
-        println(check.heartbeat(heartbeatData).toString())
+        assertContains(check.heartbeat(heartbeatData),"200")
     }
 
     @Test
@@ -184,7 +188,7 @@ class MainTest {
             gps_longitude = 107.0
         )
         val check = Main()
-        println(check.transaction(transactionData).toString())
+        assertContains(check.transaction(transactionData),"200")
     }
 
 }

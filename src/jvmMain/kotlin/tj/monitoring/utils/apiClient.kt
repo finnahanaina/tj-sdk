@@ -7,6 +7,7 @@ import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.Response
 
+
 data class response(
     var code: Int,
     var message: String
@@ -25,9 +26,9 @@ class apiClient {
             5001 -> msg = "API Log Failed"
             else -> msg = "failed"
         }
-        return response(code,"msg")
+        return response(code, msg)
     }
-    fun post(payload: Any, URL: String) : response{
+    fun post(payload: Any, URL: String) : String {
         val json = gson.toJson(payload)
         val mediaType = "application/json; charset=utf-8".toMediaType()
         val requestBody = json.toRequestBody(mediaType)
@@ -40,11 +41,11 @@ class apiClient {
         try {
             val response: Response = client.newCall(req).execute()
             if (!response.isSuccessful) {
-                return responseCode(5001)
+                return gson.toJson(responseCode(5001))
             }
-            return responseCode(200)
+            return gson.toJson(responseCode(200))
         } catch (e: Exception) {
-            return responseCode(5000)
+            return gson.toJson(responseCode(5000))
         }
     }
 }
