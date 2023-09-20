@@ -136,6 +136,7 @@ class MainTest {
             )
         )
         val check = Main()
+        println(check.booting(bootingData).toString())
         assertContains(check.booting(bootingData),"200")
     }
 
@@ -167,6 +168,7 @@ class MainTest {
             )
         )
         val check = Main()
+        println(check.heartbeat(heartbeatData).toString())
         assertContains(check.heartbeat(heartbeatData),"200")
     }
 
@@ -188,6 +190,7 @@ class MainTest {
             gps_longitude = 107.0
         )
         val check = Main()
+        println(check.transaction(transactionData).toString())
         assertContains(check.transaction(transactionData),"200")
     }
 

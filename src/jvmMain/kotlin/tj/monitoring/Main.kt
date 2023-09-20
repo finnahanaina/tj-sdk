@@ -101,14 +101,14 @@ class Main() {
     }
 
     fun booting(payload: BootingData): String {
-        return apiClient().post(payload, "/log/booting");
+        return apiClient().post(payload, "/log/booting",2);
     }
 
     fun heartbeat(payload: HeartbeatData): String {
-        return apiClient().post(payload, "/log/heartbeat");
+        return apiClient().post(payload, "/log/heartbeat",2);
     }
 
     fun transaction(payload: TransactionData): String {
-        return apiClient().post(payload, "/log/transaction");
+        return apiClient().post(payload, "/log/transaction",2);
     }
 }
