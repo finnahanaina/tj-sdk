@@ -42,7 +42,7 @@ class apiClient {
 
         var res = "";
         var i = 0
-        while (condition > i) {
+        while (condition >= i) {
             try {
                 val response: Response = client.newCall(req).execute()
                 if (response.isSuccessful) {
@@ -50,11 +50,11 @@ class apiClient {
                     break
                 }
                 if (i == condition) {
-                    res = gson.toJson(responseCode(5001))
+                    res = gson.toJson(responseCode(500, response.message))
                     break
                 }
-                i++
                 println("Retrying $i for $condition $URL")
+                i++
             } catch (e: Exception) {
                 res = gson.toJson(responseCode(500, e.message.toString()))
                 break
